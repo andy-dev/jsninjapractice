@@ -64,3 +64,41 @@ function bar(){
 }
 
 bar();
+
+//---------------------------
+//  Simple Closure Example # 3
+//---------------------------
+
+//setTimeout or any type of Callback
+
+function foo(){
+
+  var bar = "bar"
+
+  setTimeout(function(){
+    consol.log(bar);
+  },1000);
+
+}
+
+foo();
+
+//---------------------------
+//  Simple Closure Example # 4
+//---------------------------
+
+// click handlers are also closure
+// closure is a necessarry mechanism for a languange where objs
+// are first kind values, if functions would not remember their
+// lexical scope, noone would pass functions around
+
+function foo (){
+
+  var bar = "bar"
+
+  $('#btn').on('click', function(evt){
+    console.log(bar)
+  });
+
+foo();
+}
