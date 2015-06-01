@@ -10,11 +10,14 @@ function foo(){
     console.log(bar);
   }
 
-  bam(baz);
+  bam(baz); // here we pass baz, functions 1st class objects
+            // can be passed around
 }
 
 function bam(baz){
      baz(); // “bar"
+            // when we execute baz over here, it still remembers
+            // its lexical scope (this is closure)
 }
 
 foo();
@@ -42,3 +45,22 @@ $(document).ready(function(){
 });
 
 // With cb the alert will fire after the it hides
+
+//---------------------------
+//  Simple Closure Example # 2
+//---------------------------
+
+
+function foo(){
+  var bam = "bam"
+
+  return function(){
+    console.log(bam)
+  }
+}
+
+function bar(){
+  foo()();
+}
+
+bar();
