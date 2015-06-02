@@ -1,4 +1,3 @@
-
 //---------------------------
 //  Simple Closure Example
 //---------------------------
@@ -49,7 +48,6 @@ $(document).ready(function(){
 //---------------------------
 //  Simple Closure Example # 2
 //---------------------------
-
 
 function foo(){
   var bam = "bam"
