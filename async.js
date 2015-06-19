@@ -2,15 +2,78 @@
 //  Simple Async performance
 //---------------------------
 
-function now(){
-  return 4;
-}
+// function now(){
+//   return 4;
+// }
+// function later(){
+//   answer = answer * 2
+//   console.log("the meaning of life:", answer)
+// }
+// var answer = now();
+// setTimeout(later,1000)
 
-function later(){
-  answer = answer * 2
-  console.log("the meaning of life:" answer)
-}
+// // unit test
+// var Bob = require('./bob.js');
+// describe("Bob", function() {
+//   var bob = new Bob();
+//   it("stating something", function() {
+//     var result = bob.hey('Tom-ay-to, tom-aaaah-to.');
+//     expect(result).toEqual('Whatever.');
+//   });
+// });
 
-var answer = now();
+//---------------------------
+//  Simple Async performance 2
+//---------------------------
 
-setTimeout(later,1000)
+var doSomething = function(callback){
+  console.log("1");
+
+  setTimeout(function(){
+    callback();
+  }, Math.floor((Math.random() *10 ) + 1) * 1000);
+};
+
+var doSomething2 = function(callback){
+  console.log("2");
+
+  setTimeout(function(){
+    callback();
+  }, Math.floor((Math.random() *10 ) + 1) * 1000);
+};
+
+var doSomething3 = function(callback){
+  console.log("3");
+};
+
+// in ruby world we would do this
+// doSomething();
+// doSomething2();
+// doSomething3();
+
+
+// one way to solve this is callback hell
+
+doSomething(function(){
+  doSomething2(function(){
+   doSomething3();
+  });
+});
+
+
+
+//---------------------------
+//  Simple callback
+//---------------------------
+
+// var simpleOne = function(cb){
+//   console.log("here")
+
+//   setTimeout(function(){
+//     cb();
+//   }, 1000)
+// }
+
+// simpleOne(function(){
+//   console.log("your simple cb!")
+// })
