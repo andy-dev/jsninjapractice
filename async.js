@@ -22,6 +22,24 @@
 //   });
 // });
 
+
+//---------------------------
+//  Simple callback
+//---------------------------
+
+// var simpleOne = function(cb){
+//   console.log("here")
+
+//   setTimeout(function(){
+//     cb();
+//   }, 1000)
+// }
+
+// simpleOne(function(){
+//   console.log("your simple cb!")
+// })
+
+
 //---------------------------
 //  Simple Async performance 2
 //---------------------------
@@ -42,7 +60,7 @@ var doSomething2 = function(callback){
   }, Math.floor((Math.random() *10 ) + 1) * 1000);
 };
 
-var doSomething3 = function(callback){
+var doSomething3 = function(){
   console.log("3");
 };
 
@@ -60,20 +78,12 @@ doSomething(function(){
   });
 });
 
+// to solve this we will get into the deferred
+// consits of two constructs deferred and promise
+// deferred manages the ability to resolve/reject a step
+
+//promise will manage our array of calllbacks
+// allows to chain methods together (using.then)
 
 
-//---------------------------
-//  Simple callback
-//---------------------------
 
-// var simpleOne = function(cb){
-//   console.log("here")
-
-//   setTimeout(function(){
-//     cb();
-//   }, 1000)
-// }
-
-// simpleOne(function(){
-//   console.log("your simple cb!")
-// })
