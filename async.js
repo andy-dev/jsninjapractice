@@ -2,27 +2,15 @@
 //  Simple Async performance
 //---------------------------
 
-// function now(){
-//   return 4;
-// }
-// function later(){
-//   answer = answer * 2
-//   console.log("the meaning of life:", answer)
-// }
-// var answer = now();
-// setTimeout(later,1000)
-
-//---------------------------
-//  Simple unit test
-//---------------------------
-var Bob = require('./bob.js');
-describe("Bob", function() {
-  var bob = new Bob();
-  it("stating something", function() {
-    var result = bob.hey('Tom-ay-to, tom-aaaah-to.');
-    expect(result).toEqual('Whatever.');
-  });
-});
+function now(){
+  return 4;
+}
+function later(){
+  answer = answer * 2
+  console.log("the meaning of life:", answer)
+}
+var answer = now();
+setTimeout(later,1000)
 
 
 //---------------------------
