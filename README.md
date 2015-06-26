@@ -12,6 +12,6 @@ Closurues, OO, Prototypes etc
 
 # Async
 
-1) Two examples that explain callbacks
-2) Some examples of asyc js, how one would solve the problem with cbs and go into hell
-3) Simple example of es6 promises, elegant way to deal with async JS :)
+1. Two examples that explain callbacks
+2. Some examples of asyc js, how one would solve the problem with cbs and go into hell
+3. Simple example of es6 promises, elegant way to deal with async JS :)
