@@ -17,25 +17,3 @@
 // OLOO Objects Linked to Other Objects
 
 
-// --- Closures Examples -----
-
-function foo (){
-
-  var bar = "bar";
-
-  return function(){
-    console.log(bar);
-  };
-}
-
-function bam(){
-  foo()(); // "bar"
-}
-
-bam();
-
-for (var i =1; i<=5; i ++) {
-     setTimeout(function(){
-          console.log("i:" + i);
-     }, i * 1000);
-}
