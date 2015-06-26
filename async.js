@@ -1,19 +1,4 @@
 //---------------------------
-//  Simple Async performance
-//---------------------------
-
-function now(){
-  return 4;
-}
-function later(){
-  answer = answer * 2
-  console.log("the meaning of life:", answer)
-}
-var answer = now();
-setTimeout(later,1000)
-
-
-//---------------------------
 //  Simple callback
 //---------------------------
 
@@ -28,6 +13,47 @@ var simpleOne = function(cb){
 simpleOne(function(){
   console.log("your simple cb!")
 })
+
+//---------------------------
+//  Simple callback 2
+//---------------------------
+
+//asuming our html has a <p>
+
+$(document).ready(function(){
+  $("p").hide("slow", function(){
+    alert("cb executed")
+  });
+});
+
+//---------------------------
+//  With out using the CB
+//---------------------------
+
+$(document).ready(function(){
+  $("p").hide("slow")
+  alert("cb executed")
+});
+
+// With cb the alert will fire after the it hides
+
+
+//---------------------------
+//  Simple Async performance
+//---------------------------
+
+function now(){
+  return 4;
+}
+function later(){
+  answer = answer * 2
+  console.log("the meaning of life:", answer)
+}
+var answer = now();
+setTimeout(later,1000)
+
+
+
 
 
 //---------------------------
