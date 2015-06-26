@@ -54,8 +54,6 @@ setTimeout(later,1000)
 
 
 
-
-
 //---------------------------
 //  Simple Async performance 2
 //---------------------------
