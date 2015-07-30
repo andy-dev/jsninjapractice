@@ -16,8 +16,6 @@ function bam(baz){
 }
 foo();
 
-
-
 //---------------------------
 //  Simple Closure Example # 2
 //---------------------------
