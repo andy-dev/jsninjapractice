@@ -77,6 +77,18 @@ foo();
 //  this binding  implicit binding
 //---------------------------
 
+function foo(){
+  console.log(this.a)
+}
+
+var a = "hi"
+
+foo() // hi
+
+//---------------------------
+//  this binding  implicit binding
+//---------------------------
+
 function foo (){
   console.log(this.a);
 };
