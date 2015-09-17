@@ -1,4 +1,4 @@
-//---------------------------
+™//---------------------------
 //  Simple Closure Example
 //---------------------------
 function foo(){
@@ -73,3 +73,19 @@ foo();
 }
 
 
+//---------------------------
+//  this binding  implicit binding
+//---------------------------
+
+function foo (){
+  console.log(this.a);
+};
+
+obj = {
+  a = 2;
+  foo: foo
+}
+
+var a = "woops global"
+
+obj.foo() // => 2
