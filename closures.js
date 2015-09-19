@@ -101,3 +101,17 @@ obj = {
 var a = "woops global"
 
 obj.foo() // => 2
+
+//---------------------------
+//  this binding  using strict mode
+//---------------------------
+
+function foo() {
+    "use strict";
+
+    console.log( this.a );
+}
+
+var a = 2;
+
+foo(); // TypeError: `this` is `undefined`
