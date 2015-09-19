@@ -116,12 +116,3 @@ var a = 2;
 
 foo(); // TypeError: `this` is `undefined`
 
-//---------------------------
-//  a simple callback
-//---------------------------
-
-function foo (){
-  console.log("hi")
-}
-
-setTimeout(foo, 1000)
