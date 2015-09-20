@@ -116,3 +116,12 @@ var a = 2;
 
 foo(); // TypeError: `this` is `undefined`
 
+//---------------------------
+//  using the rel attribute
+//---------------------------
+
+$("[rel*='js-controls']").on("click","[rel*='js-']", function(evt){ // one of our two links was clicked
+    evt.preventDefault();
+    evt.stopPropagation();
+    evt.stopImmediatePropagation();
+  })
