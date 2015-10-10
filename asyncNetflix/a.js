@@ -81,3 +81,69 @@ var myMap = function(projectionFunction){
 //     return [accumulatedValue];
 //   }
 // };
+
+// using reduce cancatMap ES6 and non es6
+
+  return movieLists.
+    concatMap(movieList =>
+       movieList.videos.concatMap(video =>
+           video.boxarts.
+              reduce((acc,curr) =>
+                acc.width*acc.height ? acc:curr).
+              map(boxart =>
+                  ({
+                    id: video.id,
+                    title: video.title,
+                    boxart: boxart.url
+                  }))))
+
+
+return movieLists.concatMap(function(movieList) {
+    return movieList.videos.concatMap(function(video) {
+      return video.boxarts.
+      reduce(function(acc,curr) {
+      if (acc.width * acc.height < curr.width * curr.height) {
+        return acc;
+      }
+      else {
+        return curr;
+      }
+      }).
+      map(function(boxart) {
+      return {id: video.id, title: video.title, boxart: boxart.url};
+      });
+    });
+  });
+
+//zipping arrays using for loops
+
+  var counter
+  var videoIdAndBookmarkIdPairs = [];
+
+  for(var counter = 0; counter < Math.min(videos.length, bookmarks.length); counter++) {
+    videoIdAndBookmarkIdPairs.push({videoId: videos[counter].id, bookmarkId: bookmarks[counter].id});
+  }
+
+//implementing zip
+
+
+Array.zip = function(left, right, combinerFunction) {
+  var counter,
+    results = [];
+
+  for(counter = 0; counter < Math.min(left.length, right.length); counter++) {
+
+    results.push(combinerFunction(left[counter], right[counter]));
+  }
+
+  return results;
+};
+
+// zipping arraw with zip
+
+return Array.
+    zip(
+      videos,
+      bookmarks,
+      (video,bookmark) => ({videoId: videoid, bookmarkId: bookmark:id}));
+}
