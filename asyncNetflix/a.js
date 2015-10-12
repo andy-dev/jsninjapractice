@@ -117,7 +117,7 @@ return movieLists.concatMap(function(movieList) {
 
 //zipping arrays using for loops
 
-  var counter
+  var counter;
   var videoIdAndBookmarkIdPairs = [];
 
   for(var counter = 0; counter < Math.min(videos.length, bookmarks.length); counter++) {
@@ -125,7 +125,6 @@ return movieLists.concatMap(function(movieList) {
   }
 
 //implementing zip
-
 
 Array.zip = function(left, right, combinerFunction) {
   var counter,
